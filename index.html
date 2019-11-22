@@ -1,0 +1,209 @@
+
+<html>
+<title>Meal Me-Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script language="JavaScript" type="text/javascript" >
+   
+   
+    //1st endpoint*******  List all meals 
+       
+    var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
+    "method": "GET",
+    "headers": {
+   
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    
+  });
+   //end of 1st endpoint*****
+  
+  
+   //2nd endpoint********Random Meals
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast",
+    "method": "GET",
+    "headers": {
+  
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    
+  });
+  //end of 2nd endpoint******
+  
+  
+  
+  //3rd endpoint*******All Meal categories
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/categories.php",
+    "method": "GET",
+    "headers": {
+  
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    document.getElementById("menu1").innerHTML=response.categories[0].strCategory;
+    document.getElementById("menu1desc").innerHTML=response.categories[0].strCategoryDescription;
+
+    document.getElementById("menu2").innerHTML=response.categories[1].strCategory;
+    document.getElementById("menu2desc").innerHTML=response.categories[1].strCategoryDescription;
+
+    document.getElementById("menu3").innerHTML=response.categories[2].strCategory;
+    document.getElementById("menu3desc").innerHTML=response.categories[2].strCategoryDescription;
+
+    document.getElementById("menu4").innerHTML=response.categories[3].strCategory;
+    document.getElementById("menu4desc").innerHTML=response.categories[3].strCategoryDescription;
+
+    document.getElementById("menu5").innerHTML=response.categories[4].strCategory;
+    document.getElementById("menu5desc").innerHTML=response.categories[4].strCategoryDescription;
+  });
+    //end of 3rd endpoint*****
+  
+  
+  //4th endpoint*****Ingredients
+  
+    var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/list.php?i=list",
+    "method": "GET",
+    "headers": {
+     
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+  //end of 4th endpoint*****
+  
+  
+  </script> 
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+  
+        
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button">MEAL ME UP</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="allmeals.html" class="w3-bar-item w3-button">All Meals</a>
+      <a href="categories.html" class="w3-bar-item w3-button">Categories</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact Us</a> 
+      <a href="ingredients.html" class="w3-bar-item w3-button">Ingredients</a>
+      <a href="specials.html" class="w3-bar-item w3-button">Specials</a>
+    </div>
+  </div>
+</div>
+
+<!-- Header -->
+<header class="w3-display-container w3-content w3-wide" style="max-width:1600px;min-width:500px" id="home">
+  <img class="w3-image" src="https://dreamvacationsindia.files.wordpress.com/2015/12/continental-food-in-bangalore.jpg?w=940" alt="Hamburger Catering" width="1600" height="800">
+  <div class="w3-display-bottomleft w3-padding-large w3-opacity bg-success">
+    <h1 class="w3-xxlarge" style="font-weight: bolder;color: black;">Meal Me Up</h1>
+  </div>
+</header>
+
+<!-- Page content -->
+<div class="w3-content" style="max-width:1100px">
+
+  <!-- About Section -->
+  <div class="w3-row w3-padding-64" id="about">
+    <div class="w3-col m6 w3-padding-large w3-hide-small">
+     <img src="food2.jpg" class="w3-round w3-image w3-opacity-min" alt="Table Setting" width="600" height="750">
+    </div>
+
+    <div class="w3-col m6 w3-padding-large">
+      <h1 class="w3-center">About Meal-Me-Up</h1><br>
+      <h5 class="w3-center">Yummy food from all over the world</h5>
+      <p class="w3-large">Are you looking for tasty food? Are your taste buds not satisfied by ordinary recipies? Well, you are the right place. The right place to meal you up! Fantastic-Friendly-Food. Everything you love. For every mood of yoirs. Fro, vegetarian to Vegan, we have the best food recipies. And you're going to love it!<span class="w3-tag w3-light-grey">So, let's Meal you up! </span> </p>
+      
+    </div>
+  </div>
+  
+  <hr>
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Menu</h1><br>
+      <h4 id="menu1"></h4>
+      <p class="w3-text-grey"id="menu1desc"></p><br>
+    
+      <h4 id="menu2"></h4>
+      <p class="w3-text-grey"id="menu2desc"></p><br>
+    
+      <h4 id="menu3"></h4>
+      <p class="w3-text-grey"id="menu3desc"></p><br>
+    
+      <h4 id="menu4"></h4>
+      <p class="w3-text-grey"id="menu4desc"></p><br>
+    
+      <h4 id="menu5"></h4>
+      <p class="w3-text-grey"id="menu5desc"></p>    
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="food3.jpeg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%">
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+    
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Copyright@TaniaKapil <a href="https://taniakapil.github.io/resume/"   class="w3-hover-text-green">View my Resume</a></p>
+</footer>
+
+</body>
+</html>

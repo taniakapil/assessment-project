@@ -1,0 +1,263 @@
+
+
+<html>
+<title>Specials</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+  <script language="JavaScript" type="text/javascript" >
+   
+   
+    //1st endpoint*******  List all meals 
+       
+    var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/search.php?f=a",
+    "method": "GET",
+    "headers": {
+   
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+   //end of 1st endpoint*****
+  
+  
+   //2nd endpoint********Random Meals
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast",
+    "method": "GET",
+    "headers": {
+  
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+           document.getElementById("menu1").innerHTML=response.meals[1].strMeal;
+    document.getElementById("menu1desc").src=response.meals[1].strMealThumb;
+
+       document.getElementById("menu2").innerHTML=response.meals[0].strMeal;
+    document.getElementById("menu2desc").src=response.meals[0].strMealThumb;
+
+       document.getElementById("menu3").innerHTML=response.meals[3].strMeal;
+    document.getElementById("menu3desc").src=response.meals[3].strMealThumb;
+
+
+       document.getElementById("menu4").innerHTML=response.meals[4].strMeal;
+    document.getElementById("menu4desc").src=response.meals[4].strMealThumb;
+
+       document.getElementById("menu5").innerHTML=response.meals[5].strMeal;
+    document.getElementById("menu5desc").src=response.meals[5].strMealThumb;
+
+       document.getElementById("menu6").innerHTML=response.meals[2].strMeal;
+    document.getElementById("menu6desc").src=response.meals[2].strMealThumb;
+  });
+  //end of 2nd endpoint******
+  
+  
+  
+  //3rd endpoint*******All Meal categories
+  var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/categories.php",
+    "method": "GET",
+    "headers": {
+  
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+  });
+    //end of 3rd endpoint*****
+  
+  
+  //4th endpoint*****Ingredients
+  
+    var settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://www.themealdb.com/api/json/v1/1/list.php?i=list",
+    "method": "GET",
+    "headers": {
+     
+    }
+  }
+  
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+    //    document.getElementById("menu1").innerHTML=response.meals[1].strIngredient;
+    // document.getElementById("menu1desc").innerHTML=response.meals[1].strDescription;
+
+    //    document.getElementById("menu2").innerHTML=response.meals[8].strIngredient;
+    // document.getElementById("menu2desc").innerHTML=response.meals[8].strDescription;
+
+    //    document.getElementById("menu3").innerHTML=response.meals[12].strIngredient;
+    // document.getElementById("menu3desc").innerHTML=response.meals[12].strDescription;
+
+
+    //    document.getElementById("menu4").innerHTML=response.meals[22].strIngredient;
+    // document.getElementById("menu4desc").innerHTML=response.meals[22].strDescription;
+
+    //    document.getElementById("menu5").innerHTML=response.meals[15].strIngredient;
+    // document.getElementById("menu5desc").innerHTML=response.meals[15].strDescription;
+
+    //    document.getElementById("menu6").innerHTML=response.meals[2].strIngredient;
+    // document.getElementById("menu6desc").innerHTML=response.meals[2].strDescription;
+
+    //    document.getElementById("menu7").innerHTML=response.meals[19].strIngredient;
+    // document.getElementById("menu7desc").innerHTML=response.meals[19].strDescription;
+
+    //    document.getElementById("menu8").innerHTML=response.meals[4].strIngredient;
+    // document.getElementById("menu8desc").innerHTML=response.meals[4].strDescription;
+
+    //    document.getElementById("menu9").innerHTML=response.meals[7].strIngredient;
+    // document.getElementById("menu9desc").innerHTML=response.meals[7].strDescription;
+
+
+
+  });
+  //end of 4th endpoint*****
+  
+  
+  </script> 
+<style>
+body {font-family: "Times New Roman", Georgia, Serif;}
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Playfair Display";
+  letter-spacing: 5px;
+}
+</style>
+<body>
+  
+        
+
+
+<!-- Navbar (sit on top) -->
+<div class="w3-top">
+  <div class="w3-bar w3-white w3-padding w3-card" style="letter-spacing:4px;">
+    <a href="index.html" class="w3-bar-item w3-button">MEAL ME UP</a>
+    <!-- Right-sided navbar links. Hide them on small screens -->
+    <div class="w3-right w3-hide-small">
+      <a href="allmeals.html" class="w3-bar-item w3-button">All Meals</a>
+      <a href="categories.html" class="w3-bar-item w3-button">Categories</a>
+      <a href="#contact" class="w3-bar-item w3-button">Contact Us</a> 
+      <a href="ingredients.html" class="w3-bar-item w3-button">Ingredients</a>
+      <a href="specials.html" class="w3-bar-item w3-button">Specials</a>
+    </div>
+  </div>
+</div>
+
+
+  
+  <!-- Menu Section -->
+  <div class="w3-row w3-padding-64" id="menu">
+ <!--    <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Our Menu</h1><br>
+      <h4>Bread Basket</h4>
+      <p class="w3-text-grey">Assortment of fresh baked fruit breads and muffins 5.50</p><br>
+    
+      <h4>Honey Almond Granola with Fruits</h4>
+      <p class="w3-text-grey">Natural cereal of honey toasted oats, raisins, almonds and dates 7.00</p><br>
+    
+      <h4>Belgian Waffle</h4>
+      <p class="w3-text-grey">Vanilla flavored batter with malted flour 7.50</p><br>
+    
+      <h4>Scrambled eggs</h4>
+      <p class="w3-text-grey">Scrambled eggs, roasted red pepper and garlic, with green onions 7.50</p><br>
+    
+      <h4>Blueberry Pancakes</h4>
+      <p class="w3-text-grey">With syrup, butter and lots of berries 8.50</p>    
+    </div> -->
+       <div class="w3-col l6 w3-padding-large">
+      <h1 class="w3-center">Special Chicken Menu</h1><br>
+      <h4 id="menu1"></h4>
+      <!-- <p class="w3-text-grey"id="menu1desc"></p><br> -->
+      <img id="menu1desc"><br>
+    
+      <h4 id="menu2"></h4>
+      <!-- <p class="w3-text-grey"id="menu2desc"></p><br> -->
+      <img id="menu2desc"><br>
+    
+      <h4 id="menu3"></h4>
+ <!--      <p class="w3-text-grey"id="menu3desc"></p><br> -->
+      <img id="menu3desc"><br>
+    
+      <h4 id="menu4"></h4>
+    <!--   <p class="w3-text-grey"id="menu4desc"></p><br> -->
+      <img id="menu4desc"><br>
+    
+      <h4 id="menu5"></h4>
+      <!-- <p class="w3-text-grey"id="menu5desc"></p> -->
+      <img id="menu5desc"><br>
+
+      <h4 id="menu6"></h4>
+  <!--     <p class="w3-text-grey"id="menu6desc"></p> -->
+      <img id="menu6desc"><br>
+
+
+    </div>
+    
+    <div class="w3-col l6 w3-padding-large">
+      <img src="https://previews.123rf.com/images/doozydo/doozydo1704/doozydo170400332/76366590-dense-watercolor-confetti-on-white-background-rainbow-colored-watercolor-confetti-abstract-right-bor.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%; height: 100%;">
+        <img src="https://previews.123rf.com/images/doozydo/doozydo1704/doozydo170400332/76366590-dense-watercolor-confetti-on-white-background-rainbow-colored-watercolor-confetti-abstract-right-bor.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%; height: 100%;">
+          <img src="https://previews.123rf.com/images/doozydo/doozydo1704/doozydo170400332/76366590-dense-watercolor-confetti-on-white-background-rainbow-colored-watercolor-confetti-abstract-right-bor.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%; height: 100%;">
+            <img src="https://previews.123rf.com/images/doozydo/doozydo1704/doozydo170400332/76366590-dense-watercolor-confetti-on-white-background-rainbow-colored-watercolor-confetti-abstract-right-bor.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%; height: 100%;">
+              <img src="https://previews.123rf.com/images/doozydo/doozydo1704/doozydo170400332/76366590-dense-watercolor-confetti-on-white-background-rainbow-colored-watercolor-confetti-abstract-right-bor.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%; height: 100%;">
+                <img src="https://previews.123rf.com/images/doozydo/doozydo1704/doozydo170400332/76366590-dense-watercolor-confetti-on-white-background-rainbow-colored-watercolor-confetti-abstract-right-bor.jpg" class="w3-round w3-image w3-opacity-min" alt="Menu" style="width:100%; height: 100%;">
+  <!--      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR31WfhIhdrG23IyPKnBMygVp3DQjDryNzp5Nt35KVejQrQhTv2mA&s" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+       <img src="https://theunbearablelightnessofbeinghungry.com/wp-content/uploads/2015/02/RedfernContinental-001.jpg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+       <img src="https://theunbearablelightnessofbeinghungry.com/wp-content/uploads/2015/02/RedfernContinental-002-590x393.jpg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+       <img src="https://static.toiimg.com/photo/39410025/.jpg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+       <img src="https://5.imimg.com/data5/YM/RA/GLADMIN-33188925/continental-food-500x500.jpg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+       <img src="http://im.hunt.in/cg/Virar/City-Guide/continental-restaurants.jpeg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+        <img src="http://im.whatshot.in/content/2016/Sep/1473757361-cafe-bae-revised.jpg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%">
+         <img src="https://c2.hiqcdn.com/customcdn/500x500/blog/sites/default/files/images/chicken-ch_1.jpg" class="w3-round w3-image w3-opacity-min pt-4" alt="Menu" style="width:100%"> -->
+
+    </div>
+  </div>
+
+  <hr>
+
+  <!-- Contact Section -->
+  <div class="w3-container w3-padding-64" id="contact">
+    <h1>Contact</h1><br>
+  
+    <form action="/action_page.php" target="_blank">
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
+      <p><input class="w3-input w3-padding-16" type="number" placeholder="How many people" required name="People"></p>
+      <p><input class="w3-input w3-padding-16" type="datetime-local" placeholder="Date and time" required name="date" value="2017-11-16T20:00"></p>
+      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message \ Special requirements" required name="Message"></p>
+      <p><button class="w3-button w3-light-grey w3-section" type="submit">SEND MESSAGE</button></p>
+    </form>
+  </div>
+  
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+
+<footer class="w3-center w3-light-grey w3-padding-32">
+  <p>Copyright@TaniaKapil <a href="https://taniakapil.github.io/resume/"   class="w3-hover-text-green">View my Resume</a></p>
+</footer>
+
+</body>
+</html>
+  
+   
